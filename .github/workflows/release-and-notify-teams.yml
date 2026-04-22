@@ -1,5 +1,5 @@
 name: Deploy and Release
-run-name: Deploy and Release by ${{ github.actor }}
+run-name: Deploy and Release - ${{ github.event.release.tag_name }} by ${{ github.actor }}
 
 on:
   release:
