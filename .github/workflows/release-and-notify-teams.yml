@@ -1,4 +1,5 @@
 name: Deploy and Release
+run-name: Deploy and Release by ${{ github.actor }}
 
 on:
   release:
@@ -19,14 +20,14 @@ jobs:
           fetch-depth: 0
 
       # 1. DEPLOYMENT STEP
-      - name: Deploy to Production
+      - name: Deploy To Production
         run: |
           echo "Deploying new version..."
           # Your deployment logic here
           
       # 2. GENERATE RELEASE NOTES
       - name: Generate Release Notes
-        id: release_notes
+        id: release-notes
         uses: softprops/action-gh-release@v2
         with:
           generate_release_notes: true
